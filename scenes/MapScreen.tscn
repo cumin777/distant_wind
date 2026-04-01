@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmapscreen001"]
+
+[ext_resource type="Script" path="res://scripts/MapScreen.gd" id="1"]
+
+[node name="MapScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.06, 0.06, 0.12, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+offset_left = 490.0
+offset_top = 20.0
+offset_right = 790.0
+offset_bottom = 60.0
+text = "Map"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = -40.0
+offset_bottom = -60.0
+
+[node name="MapContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="PlayerInfo" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+theme_override_constants/separation = 30
+
+[node name="HPLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "HP: 75/75"
+
+[node name="GoldLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "Gold: 99"
+
+[node name="FloorLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "Floor: 0/15"

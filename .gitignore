@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+*.import
+export_presets.cfg
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Build outputs
+build/
+*.exe
+*.x86_64
+*.apk
+*.aab
+
+# Godot editor
+*.uid

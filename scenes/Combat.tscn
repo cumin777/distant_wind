@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcombat001"]
+
+[ext_resource type="Script" path="res://scripts/CombatUI.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/CombatManager.gd" id="2"]
+
+[node name="Combat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.05, 0.1, 1)
+
+[node name="CombatManager" type="Node2D" parent="."]
+script = ExtResource("2")
+
+[node name="EnemyArea" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 40.0
+offset_bottom = 280.0
+grow_horizontal = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="PlayerArea" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -60.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="PlayerHPLabel" type="Label" parent="PlayerArea"]
+layout_mode = 2
+text = "HP: 75/75"
+
+[node name="PlayerBlockLabel" type="Label" parent="PlayerArea"]
+layout_mode = 2
+text = "Block: 0"
+
+[node name="EnergyLabel" type="Label" parent="PlayerArea"]
+layout_mode = 2
+text = "Energy: 3/3"
+
+[node name="GoldLabel" type="Label" parent="PlayerArea"]
+layout_mode = 2
+text = "Gold: 99"
+
+[node name="HandArea" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -350.0
+offset_bottom = -100.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="EndTurnBtn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -400.0
+offset_right = -140.0
+offset_bottom = -350.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "End Turn"
+
+[node name="DrawPileLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 580.0
+offset_right = -20.0
+offset_bottom = 610.0
+grow_horizontal = 0
+text = "Draw: 0"
+
+[node name="DiscardPileLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 610.0
+offset_right = -20.0
+offset_bottom = 640.0
+grow_horizontal = 0
+text = "Discard: 0"
+
+[node name="TurnLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 200.0
+offset_bottom = 40.0
+text = "Turn: 1"
+
+[node name="InfoLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = -60.0
+offset_right = 700.0
+offset_bottom = -10.0
+grow_vertical = 0
+bbcode_enabled = true
+text = ""
+fit_content = true
+
+[node name="DeckViewBtn" type="Button" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 640.0
+offset_right = 120.0
+offset_bottom = 680.0
+text = "View Deck"

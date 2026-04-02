@@ -1,0 +1,64 @@
+[PASS] Initial HP
+[PASS] Initial Max HP
+[PASS] Initial Gold
+[PASS] Initial Deck Size
+[PASS] Initial Floor
+[PASS] Player alive
+[PASS] Take damage - actual
+[PASS] HP after damage
+[PASS] Block absorbs damage
+[PASS] HP after blocked damage
+[PASS] Block after damage
+[PASS] Heal caps at max
+[PASS] Player dies
+[PASS] Draw pile has all deck cards
+[PASS] Hand is empty before draw
+[PASS] Hand has 5 cards after draw
+[PASS] Draw pile reduced
+[PASS] Hand empty after discard
+[PASS] Discard pile has 5 cards
+[PASS] Can draw remaining 5
+[PASS] Draw pile empty
+[PASS] Reshuffle from discard works
+[PASS] Add gold
+[PASS] Spend gold success
+[PASS] Gold after spend
+[PASS] Spend gold fail when not enough
+[PASS] Energy set
+[PASS] Add card to deck
+[PASS] Card base damage
+[PASS] Card base cost
+[PASS] Card is upgraded
+[PASS] Upgraded damage
+[PASS] Upgraded name has +
+[PASS] Floors remaining at start
+[PASS] Floor 0 has 15 remaining
+[PASS] Floor 1 has 14 remaining
+[PASS] Floor 2 has 13 remaining
+[PASS] Floor 3 has 12 remaining
+[PASS] Floor 4 has 11 remaining
+[PASS] Floor 5 has 10 remaining
+[PASS] Floor 6 has 9 remaining
+[PASS] Floor 7 has 8 remaining
+[PASS] Floor 8 has 7 remaining
+[PASS] Floor 9 has 6 remaining
+[PASS] Floor 10 has 5 remaining
+[PASS] Floor 11 has 4 remaining
+[PASS] Floor 12 has 3 remaining
+[PASS] Floor 13 has 2 remaining
+[PASS] Floor 14 has 1 remaining
+[PASS] Floor 14 is last floor
+[PASS] Rest heals 30% (22 HP)
+[PASS] Heal at full HP capped
+[PASS] Card not upgraded initially
+[PASS] Upgraded card has upgraded flag
+[PASS] Can afford common card
+[PASS] Spend gold works
+[PASS] Gold decreased
+[PASS] Card removed
+[PASS] Deck size decreased
+[PASS] Event damage applied
+[PASS] Event gold gained
+[PASS] Has upgradeable cards
+[PASS] Card is now upgraded
+[PASS] Upgraded card has same or more damage

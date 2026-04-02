@@ -52,6 +52,8 @@ func _start_player_turn():
 	GameManager.player_block = 0
 	if metallicize_block > 0:
 		GameManager.add_block(metallicize_block)
+	if turn_count > 1:
+		GameManager.draw_cards(5)
 	player_turn_started.emit()
 	turn_started.emit()
 
@@ -82,8 +84,9 @@ func _process_enemies(index: int):
 	var result = enemy.execute_move()
 
 	if result.damage > 0:
+		GameManager.take_damage(result.damage)
 		player_attacked.emit(result.damage)
-		await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(0.3).timeout
 		if not combat_active:
 			return
 		if GameManager.is_player_dead():

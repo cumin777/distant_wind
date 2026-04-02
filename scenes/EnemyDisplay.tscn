@@ -34,7 +34,7 @@ offset_left = 65.0
 offset_top = 60.0
 offset_right = 78.0
 offset_bottom = 75.0
-color = Color.WHITE
+color = Color(1, 1, 1, 1)
 
 [node name="EyeR" type="ColorRect" parent="."]
 layout_mode = 0
@@ -42,7 +42,7 @@ offset_left = 100.0
 offset_top = 60.0
 offset_right = 113.0
 offset_bottom = 75.0
-color = Color.WHITE
+color = Color(1, 1, 1, 1)
 
 [node name="HPBar" type="ProgressBar" parent="."]
 layout_mode = 0

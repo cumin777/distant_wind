@@ -3,7 +3,7 @@ extends Control
 var card_data: CardData
 var card_index: int = -1
 var is_hovered: bool = false
-var original_position: Vector2
+var original_position: Vector2 = Vector2.ZERO
 var in_hand: bool = false
 
 signal card_clicked(index: int)
@@ -44,9 +44,16 @@ func _update_display():
 	cost_label.text = str(card_data.get_effective_cost())
 	name_label.text = card_data.card_name
 
-	var type_names = ["Attack", "Skill", "Power"]
+	var type_names = ["ATK", "SKL", "PWR"]
 	type_label.text = type_names[card_data.card_type] if card_data.card_type < type_names.size() else "???"
-	desc_label.text = card_data.description
+
+	# Build description with actual values
+	var desc = card_data.description
+	if card_data.get_effective_damage() > 0:
+		desc = desc.replace("6", str(card_data.get_effective_damage())).replace("8", str(card_data.get_effective_damage())).replace("5", str(card_data.get_effective_damage())).replace("9", str(card_data.get_effective_damage())).replace("13", str(card_data.get_effective_damage())).replace("10", str(card_data.get_effective_damage())).replace("3", str(card_data.get_effective_damage()))
+	if card_data.get_effective_block() > 0:
+		desc = desc.replace("5 Block", str(card_data.get_effective_block()) + " Block").replace("8 Block", str(card_data.get_effective_block()) + " Block").replace("30 Block", str(card_data.get_effective_block()) + " Block")
+	desc_label.text = desc
 
 	# Color based on card type
 	var type_colors = [
@@ -71,6 +78,8 @@ func _on_button_pressed():
 	card_clicked.emit(card_index)
 
 func _on_mouse_entered():
+	if not is_instance_valid(self):
+		return
 	is_hovered = true
 	card_hovered.emit(card_index)
 	if in_hand:
@@ -80,6 +89,8 @@ func _on_mouse_entered():
 		z_index = 10
 
 func _on_mouse_exited():
+	if not is_instance_valid(self):
+		return
 	is_hovered = false
 	card_unhovered.emit(card_index)
 	if in_hand:
@@ -88,17 +99,11 @@ func _on_mouse_exited():
 		z_index = 0
 
 func set_playable(playable: bool):
+	if not is_instance_valid(self):
+		return
 	if playable:
 		modulate = Color.WHITE
 		button.disabled = false
 	else:
 		modulate = Color(0.5, 0.5, 0.5, 0.8)
 		button.disabled = true
-
-func highlight_target(highlight: bool):
-	if highlight:
-		border.color = Color(1, 0.9, 0.3)
-		scale = Vector2(1.15, 1.15)
-	else:
-		_update_display()
-		scale = Vector2(1.0, 1.0)

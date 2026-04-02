@@ -27,7 +27,7 @@ func choose_next_move():
 		current_move = {"name": "Idle", "damage": 0, "block": 0, "effect": "", "value": 0}
 		return
 	move_index = randi() % data.moves.size()
-	current_move = data.moves[move_index]
+	current_move = data.moves[move_index].duplicate()
 	enemy_intents_changed.emit(self)
 
 func get_intent_damage() -> int:
@@ -57,7 +57,7 @@ func take_damage(amount: int) -> int:
 		actual_damage -= blocked_amount
 	current_hp = max(0, current_hp - actual_damage)
 	enemy_hp_changed.emit(self)
-	if current_hp <= 0:
+	if current_hp <= 0 and not is_dead:
 		is_dead = true
 		enemy_died.emit(self)
 	return actual_damage

@@ -48,7 +48,7 @@ func _show_rewards():
 		var display = CardScene.instantiate()
 		card_container.add_child(display)
 		display.setup(card, i)
-		display.card_clicked.connect(_on_card_selected.bind(i))
+		display.card_clicked.connect(_on_card_selected)
 
 func _on_card_selected(index: int):
 	if index >= 0 and index < reward_cards.size():

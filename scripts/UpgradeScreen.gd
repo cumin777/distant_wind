@@ -40,7 +40,7 @@ func _show_upgradeable_cards():
 			var display = CardScene.instantiate()
 			card_container.add_child(display)
 			display.setup(card, i)
-			display.card_clicked.connect(_on_card_selected.bind(i))
+			display.card_clicked.connect(_on_card_selected)
 			card_displays.append(display)
 
 	if card_displays.is_empty():

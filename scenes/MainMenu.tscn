@@ -62,14 +62,14 @@ theme_override_constants/separation = 20
 [node name="NewGameBtn" parent="VBox" instance=ExtResource("2")]
 layout_mode = 2
 custom_minimum_size = Vector2(300, 60)
-text = "New Game"
+text = "START"
 
-[node name="ContinueBtn" parent="VBox" instance=ExtResource("2")]
+[node name="ContinueBtn" type="Button" parent="VBox"]
 layout_mode = 2
 custom_minimum_size = Vector2(300, 60)
 text = "Continue"
 
-[node name="QuitBtn" parent="VBox" instance=ExtResource("2")]
+[node name="QuitBtn" type="Button" parent="VBox"]
 layout_mode = 2
 custom_minimum_size = Vector2(300, 60)
 text = "Quit"

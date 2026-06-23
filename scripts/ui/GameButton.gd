@@ -1,16 +1,6 @@
 extends BaseButton
 class_name GameButton
 
-var _text := ""
-
-@export var text: String:
-	get:
-		return _text
-	set(value):
-		_text = value
-		if is_node_ready():
-			_update_text()
-
 @export var hover_scale := 1.05
 @export var press_scale := 0.96
 @export var normal_color := Color(0.16, 0.16, 0.28, 0.95)
@@ -66,7 +56,7 @@ func _refresh_disabled() -> void:
 		_apply_style(_normal_style)
 
 func _update_text() -> void:
-	label.text = _text
+	label.text = text
 
 func _build_styles() -> void:
 	_configure_style(_normal_style, normal_color, Color(0.5, 0.48, 0.72))

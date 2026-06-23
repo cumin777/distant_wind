@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmainmenu001"]
+[gd_scene load_steps=3 format=3 uid="uid://bmainmenu001"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/GameButton.tscn" id="2"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -58,17 +59,17 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 20
 
-[node name="NewGameBtn" type="Button" parent="VBox"]
+[node name="NewGameBtn" parent="VBox" instance=ExtResource("2")]
 layout_mode = 2
 custom_minimum_size = Vector2(300, 60)
 text = "New Game"
 
-[node name="ContinueBtn" type="Button" parent="VBox"]
+[node name="ContinueBtn" parent="VBox" instance=ExtResource("2")]
 layout_mode = 2
 custom_minimum_size = Vector2(300, 60)
 text = "Continue"
 
-[node name="QuitBtn" type="Button" parent="VBox"]
+[node name="QuitBtn" parent="VBox" instance=ExtResource("2")]
 layout_mode = 2
 custom_minimum_size = Vector2(300, 60)
 text = "Quit"

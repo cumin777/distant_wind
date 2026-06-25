@@ -1,5 +1,5 @@
 extends Button
-class_name BaseButton
+class_name WindButtonBase
 
 signal focus_started
 signal focus_ended
